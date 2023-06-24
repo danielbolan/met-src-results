@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteorite Sample Constrainment</title>
+</head>
+
+<link rel="preconnect" href="https://api.fonts.coollabs.io">
+<link rel="preconnect" href="https://cdn.fonts.coollabs.io" crossorigin>
+<link href="https://api.fonts.coollabs.io/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+
+<body>
+    {%- macro card(name, subdir) -%}
+    <div class="card">
+        <p class="card-title">{{name}}</p>
+        <img src="results/{{subdir}}/{{name}}.png" alt="Map thumbnail for {{name}}">
+        <div class="card-links flex space-around">
+            <a href="https://dcb.lu/met_src_results/{{subdir}}/{{name}}.zip">Shapefile</a>
+            <a href="https://dcb.lu/met_src_results/{{subdir}}/{{name}}.png">PNG</a>
+            <a href="https://dcb.lu/met_src_results/{{subdir}}/{{name}}.json">GeoJSON</a>
+        </div>
+    </div>
+    {%- endmacro -%}
+
+    <h1>Continuous-Domain Constrainment of Lunar Meteorite Source Regions</h1>
+    <div class="credit-container">
+        <div class="credit">
+            <p class="name">Daniel Bolan</p>
+            <p>Independent</p>
+            <a href="https://dcb.lu">dcb.lu</a>
+        </div>
+        <div class="credit">
+            <p class="name">Abigail Calzada Díaz</p>
+            <p>European Space Resources Innovation Centre (ESRIC)</p>
+            <p>Luxembourg Institute of Science and Technology (LIST)</p>
+            <a href="https://abigailcalzada.space">abigailcalzada.space</a>
+        </div>
+    </div>
+
+    <div class="project-description">
+        <p>
+            A repository for the <a href="https://sservi.directus.app/assets/2483b7e0-a336-443d-8739-3d5f4756e1fb.pdf#page=33">results presented</a> at the <a href="https://sservi.nasa.gov/els2023/">European Lunar Symposium</a> on June 28, 2023.
+            Details on these files and the code used to generate them can be found on <a href="https://github.com/danielbolan/met_src">GitHub.</a>
+        </p>
+    </div>
+
+    <hr />
+
+    <h2>Calzada 2015</h2>
+    <section class="grid">
+        {% for sample in calzada2015 %}
+        {{ card(sample,'calzada2015') }}
+        {% endfor %}
+    </section>
+
+    <hr />
+
+    <h2>Validation Set</h2>
+    <section class="grid">
+        {% for sample in validation %}
+        {{ card(sample,'validation') }}
+        {% endfor %}
+    </section>
+</body>
+
+</html>
