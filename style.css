@@ -103,7 +103,7 @@ img {
     }
 }
 
-@media (max-width: 36mmrem) {
+@media (max-width: 36rem) {
     .grid {
         grid-template-columns: 1fr;
     }
