@@ -87,7 +87,7 @@ hr {
 
 img {
     display: block;
-    max-width: 100%
+    width: 100%
 }
 
 .card-links {
@@ -103,7 +103,7 @@ img {
     }
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 32rem) {
     .grid {
         grid-template-columns: 1fr;
     }
